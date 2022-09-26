@@ -17,7 +17,7 @@ export const HeroSection = () => {
             Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving. budgeting, investing, and much more.
             </p>
             <ButtonCTA>
-              Request invite
+              <span>Request invite</span>
             </ButtonCTA>
           </div>
         </div>
@@ -27,7 +27,7 @@ export const HeroSection = () => {
         </div>
       </section>
       <section className='hero-subsection'>
-        <div className='title-container'>
+        <div className='title-section'>
           <h2>Why choose Easybank?</h2>
           <p>We leverage Open Banking to turn your bank account into your financial hub. Control your finances like never before.</p>
         </div>

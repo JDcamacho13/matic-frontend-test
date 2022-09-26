@@ -1,8 +1,16 @@
-// eslint-disable-next-line react/prop-types
-export const ButtonCTA = ({ children }) => {
+import PropTypes from 'prop-types'
+
+export const ButtonCTA = ({ onClick, active, children }) => {
+  const classname = 'CTA-button ' + (active ? 'active' : '')
   return (
-    <button className='CTA-button'>
+    <button className={classname} disabled={active} onClick={onClick}>
       {children}
     </button>
   )
+}
+
+ButtonCTA.propTypes = {
+  onClick: PropTypes.func,
+  active: PropTypes.bool,
+  children: PropTypes.element.isRequired
 }

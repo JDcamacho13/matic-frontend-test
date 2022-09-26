@@ -16,8 +16,8 @@ export const Header = () => {
           <a href='#'><li>Careers</li></a>
         </ul>
       </nav>
-      <ButtonCTA>
-        Request invite
+      <ButtonCTA >
+        <span>Request invite</span>
       </ButtonCTA>
     </header>
   )

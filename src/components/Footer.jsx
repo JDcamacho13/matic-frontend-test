@@ -35,7 +35,7 @@ export const Footer = () => {
       </div>
       <div className='copyright-container'>
         <ButtonCTA>
-          Request Invite
+          <span>Request Invite</span>
         </ButtonCTA>
         <p>© Easybank. All Rights Reserved</p>
       </div>

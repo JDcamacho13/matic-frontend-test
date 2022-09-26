@@ -92,7 +92,19 @@ a {
 }
 
 .CTA-button:active {
-  background: linear-gradient(90deg, #84E1A7 4.85%, #81D6DB 100%);;
+  background: linear-gradient(90deg, #84E1A7 4.85%, #81D6DB 100%);
+}
+
+.CTA-button.active {
+  font-family: 'PublicSans-Bold';
+  width: 165px;
+  height: 45px;
+  border-radius: 89px;
+  border: none;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  background: linear-gradient(90deg, #84E1A7 4.85%, #81D6DB 100%);
 }
 
 .hero-section {
@@ -161,30 +173,30 @@ a {
   padding: 100px 160px;
 }
 
-.hero-subsection .title-container {
-  width: 600px;
-}
 
-.hero-subsection .title-container h2 {
-  color: var(--primary);
+.title-section h2 {
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 62px;
+  color: var(--primary);
   letter-spacing: -0.02em;
-
   margin-bottom: 20px;
 }
 
-
-.hero-subsection .title-container p {
-  padding-left: 2px;
+.title-section p {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
-  line-height: 25px;
+  line-height: 24px;
+  color: #99989D; 
+  padding-left: 2px;
+}
 
-  color: #959499;
+
+.hero-subsection .title-section {
+  width: 600px;
+  background-color: transparent;
 }
 
 .services-container {
@@ -225,7 +237,7 @@ a {
   padding: 75px 160px;
 }
 
-.latest-article-title {
+.latest-articles-section .title-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -376,4 +388,200 @@ footer {
   line-height: 18px;
   color: #fff;
   letter-spacing: 0.01em;
+}
+
+.add-article-section {
+  background-color: #F9F9F9;
+}
+
+.add-article-section .title-section {
+  padding: 70px 190px 115px 160px;
+}
+
+.title-section h2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 62px;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.title-section p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #99989D; 
+}
+
+.form-add-article {
+  margin: 0 auto;
+  width: 700px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 41px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 45px 45px 35px 70px;
+}
+
+.form div {
+  margin-bottom: 25px;
+}
+
+.form label {
+  width: 100%;
+  font-family: 'PublicSans-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--primary);
+}
+
+.form .inputs {
+  width: 100%;
+  padding: 15px 20px;
+
+  border: 1px solid #D1D5DB;
+
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+.form textarea {
+  height: 340px;
+}
+
+.form .CTA-button {
+  width: 100%;
+}
+
+.table-container {
+  margin: 0 auto;
+  width: 1090px;  
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse:collapse;
+  
+}
+
+table th {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+
+  color: #6B7280;
+
+}
+
+table th:nth-child(1) {
+  width: 17.5%;
+}
+
+table th:nth-child(2) {
+  width: 25%;
+}
+
+table th:nth-child(3) {
+  width: 30%;
+}
+
+table th, table td {
+  padding: 12px 24px 12px 24px;
+  text-align: left;
+  border: none;
+}
+
+thead {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+thead tr {
+  background: #F9FAFB;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+tbody td {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #6B7280;
+}
+
+.author-cell {
+  font-weight: 500;
+  font-family: 'PublicSans-Medium';
+  color: var(--primary);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+tbody td button {
+  border: none;
+  background-color: transparent;
+  font-family: 'PublicSans-Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.delete {
+  color: #FF8A8A;
+}
+
+.edit {
+  color: #84E1A7;
+}
+
+.add-article-section .title-section {
+  padding-bottom: 35px;
+}
+
+.loading-spinner {
+  border: 4px solid var(--primary);
+  border-left-color: #2d314e52;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
 }

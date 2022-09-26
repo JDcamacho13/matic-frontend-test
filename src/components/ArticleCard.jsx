@@ -1,4 +1,5 @@
-// eslint-disable-next-line react/prop-types
+import PropTypes from 'prop-types'
+
 export const ArticleCard = ({ img, author, title, content }) => {
   return (
     <article className="article-card">
@@ -10,4 +11,11 @@ export const ArticleCard = ({ img, author, title, content }) => {
       </div>
     </article>
   )
+}
+
+ArticleCard.propTypes = {
+  img: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 }
