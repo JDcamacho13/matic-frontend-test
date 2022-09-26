@@ -68,7 +68,7 @@ export const FormAddArticle = () => {
         <label>Blog content</label>
         <textarea className="inputs" value={content.value} onChange={content.onChange} />
       </div>
-      <ButtonCTA active={loading}>Save</ButtonCTA>
+      <ButtonCTA active={loading}><span>Save</span></ButtonCTA>
     </form>
   )
 }

@@ -1,7 +1,11 @@
 import { FormAddArticle } from './FormAddArticle'
 import { PreviousArticle } from './PreviousArticles'
+import { ModalContainer } from './ModalContainer'
+import { useContext } from 'react'
+import { ArticlesContext } from '../context/ArticlesContext'
 
 export const NewArticle = () => {
+  const { modal } = useContext(ArticlesContext)
   return (
     <section className="add-article-section">
       <div className="title-section">
@@ -10,6 +14,9 @@ export const NewArticle = () => {
       </div>
       <FormAddArticle />
       <PreviousArticle />
+      {modal && (
+        <ModalContainer />
+      )}
     </section>
   )
 }

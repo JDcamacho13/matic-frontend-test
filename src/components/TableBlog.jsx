@@ -14,7 +14,7 @@ const maxLengthFormat = (phrase) => {
 }
 
 export const TableBlog = () => {
-  const { articles, setArticles, loadingArticles, toggleLoading } = useContext(ArticlesContext)
+  const { articles, setArticles, loadingArticles, toggleLoading, openModal } = useContext(ArticlesContext)
 
   useEffect(() => {
     getAllArticles().then(data => {
@@ -24,6 +24,12 @@ export const TableBlog = () => {
   }, [])
 
   if (loadingArticles) return <div className='loading-container'><Loading /></div>
+
+  const onClick = (action, article) => {
+    openModal(action, article)
+  }
+
+  console.log(articles)
 
   return (
     <div className='table-container'>
@@ -47,8 +53,8 @@ export const TableBlog = () => {
                 <td>{maxLengthFormat(article.content)}</td>
                 <td>{formatDate(article.createdAt)}</td>
                 <td className='options'>
-                  <button className='delete'>Delete</button>
-                  <button className='edit'>Edit</button>
+                  <button className='delete' onClick={e => onClick('delete', article) }>Delete</button>
+                  <button className='edit' onClick={e => onClick('edit', article) }>Edit</button>
                 </td>
               </tr>
             ))
