@@ -5,11 +5,11 @@ import { toast } from 'react-hot-toast'
 import { ButtonCTA } from './ButtonCTA'
 
 export const ModalDelete = () => {
-  const { articleModal, closeModal, loadingModal, toggleLoadingModal, deleteArticleFromList } = useContext(ArticlesContext)
+  const { articleModal, closeModal, loadingModal, setLoadingModal, deleteArticleFromList } = useContext(ArticlesContext)
 
   const onClick = () => {
     if (!loadingModal) {
-      toggleLoadingModal()
+      setLoadingModal(true)
 
       deleteArticle(articleModal.id).then(res => {
         if (res.statusCode === 200) {
@@ -19,11 +19,11 @@ export const ModalDelete = () => {
         } else {
           toast.error('Error in delete')
         }
-        toggleLoadingModal()
+        setLoadingModal(false)
       }).catch(err => {
         console.log(err)
         toast.error('Error in delete')
-        toggleLoadingModal()
+        setLoadingModal(false)
       })
     }
   }

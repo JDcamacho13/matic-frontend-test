@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import { ArticlesContext } from '../context/ArticlesContext'
 
 export const ModalEdit = () => {
-  const { articleModal, closeModal, loadingModal, editArticleFromList, toggleLoadingModal } = useContext(ArticlesContext)
+  const { articleModal, closeModal, loadingModal, editArticleFromList, setLoadingModal } = useContext(ArticlesContext)
   const author = useInput(articleModal.author)
   const title = useInput(articleModal.title)
   const content = useInput(articleModal.content)
@@ -14,7 +14,7 @@ export const ModalEdit = () => {
   const onSubmit = (e) => {
     e.preventDefault()
     if (!loadingModal) {
-      toggleLoadingModal()
+      setLoadingModal(true)
 
       const articleNewData = {
         author: author.value,
@@ -30,11 +30,11 @@ export const ModalEdit = () => {
         } else {
           toast.error('Error in edit')
         }
-        toggleLoadingModal()
+        setLoadingModal(false)
       }).catch(err => {
         console.log(err)
         toast.error('Error in edit')
-        toggleLoadingModal()
+        setLoadingModal(false)
       })
     }
   }

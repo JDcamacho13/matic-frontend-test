@@ -688,6 +688,11 @@ textarea {
   color: #36CB6D;
 }
 
+.pagination div {
+  max-width: 500px;
+  height: 50px;
+}
+
 .pagination nav .active {
   border-top: #36CB6D 1px solid;
   color: #36CB6D;

@@ -10,10 +10,6 @@ export const ArticlesProvider = ({ children }) => {
   const [articleModal, setArticleModal] = useState({})
   const [loadingModal, setLoadingModal] = useState(false)
 
-  const toggleLoading = () => {
-    setLoadingArticles(prev => !prev)
-  }
-
   const openModal = (action, article) => {
     setModal(action)
     setArticleModal(article)
@@ -22,10 +18,6 @@ export const ArticlesProvider = ({ children }) => {
   const closeModal = () => {
     setModal(false)
     setArticleModal({})
-  }
-
-  const toggleLoadingModal = () => {
-    setLoadingModal(prev => !prev)
   }
 
   const deleteArticleFromList = (id) => {
@@ -49,13 +41,13 @@ export const ArticlesProvider = ({ children }) => {
     articles,
     setArticles,
     loadingArticles,
-    toggleLoading,
+    setLoadingArticles,
     modal,
     articleModal,
     openModal,
     closeModal,
     loadingModal,
-    toggleLoadingModal,
+    setLoadingModal,
     deleteArticleFromList,
     editArticleFromList
   }

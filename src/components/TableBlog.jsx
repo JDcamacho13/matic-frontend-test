@@ -2,9 +2,8 @@ import { useEffect, useContext } from 'react'
 import { getAllArticles } from '../services/articles'
 import { ArticlesContext } from '../context/ArticlesContext'
 import { Loading } from './icons/Loading'
+import { PaginationBar } from './PaginationBar'
 import { usePagination } from '../hooks/usePagination'
-import { ArrowLeft } from './icons/ArrowLeft'
-import { ArrowRight } from './icons/ArrowRight'
 
 const formatDate = (date) => {
   const dateObj = new Date(date)
@@ -17,13 +16,13 @@ const maxLengthFormat = (phrase) => {
 }
 
 export const TableBlog = () => {
-  const { articles, setArticles, loadingArticles, toggleLoading, openModal } = useContext(ArticlesContext)
+  const { articles, setArticles, loadingArticles, setLoadingArticles, openModal } = useContext(ArticlesContext)
   const { data, page, totalPages, iterator, setPage } = usePagination(articles)
 
   useEffect(() => {
     getAllArticles().then(data => {
       setArticles(data)
-      toggleLoading()
+      setLoadingArticles(false)
     })
   }, [])
 
@@ -32,8 +31,6 @@ export const TableBlog = () => {
   const onClick = (action, article) => {
     openModal(action, article)
   }
-
-  console.log(articles)
 
   return (
     <>
@@ -67,23 +64,12 @@ export const TableBlog = () => {
         </tbody>
       </table>
     </div>
-    <div className='pagination'>
-      <button disabled={page === 0} onClick={() => setPage(page - 1)}>
-        <ArrowLeft />
-        <span style={{ marginLeft: '15px' }}>Previous</span>
-      </button>
-      <nav>
-        {
-          iterator.map(i => (
-            <button key={i} onClick={() => setPage(i - 1)} className={i - 1 === page ? 'active' : ''} >{i}</button>
-          ))
-        }
-      </nav>
-      <button disabled={page + 1 === totalPages} onClick={() => setPage(page + 1)}>
-        <span style={{ marginRight: '15px' }}>Next</span>
-        <ArrowRight />
-      </button>
-    </div>
+    <PaginationBar
+      page={page}
+      setPage={setPage}
+      totalPages={totalPages}
+      iterator={iterator}
+    />
     </>
   )
 }
