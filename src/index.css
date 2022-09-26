@@ -639,3 +639,62 @@ textarea {
   justify-content: space-around;
   margin-top: 25px;
 }
+
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px auto;
+  margin-bottom: 0;
+  width: 1090px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.pagination button {
+  padding-top: 17px;
+  background: none;
+  border: 0;
+  color: #6B7280;
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pagination button svg {
+  fill: currentColor;
+}
+
+.pagination nav button {
+  padding-right: 16px;
+  padding-left: 16px;
+  border-top: transparent 1px solid;
+}
+
+.pagination nav span {
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #6B7280;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pagination button:hover {
+  border-top: #36CB6D 1px solid;
+  color: #36CB6D;
+}
+
+.pagination nav .active {
+  border-top: #36CB6D 1px solid;
+  color: #36CB6D;
+}
+
+.pagination button:disabled {
+  cursor: default;
+  color: #D1D5DB;
+  border-top: transparent;
+}
