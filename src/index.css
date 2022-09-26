@@ -1,19 +1,19 @@
 @font-face {
   font-family: 'PublicSans-Regular';
   font-style: normal;
-  src: local('PublicSans-Regular'), url(./fonts/PublicSans-Regular.ttf) format('truetype');
+  src: local('PublicSans-Regular'), url(/fonts/PublicSans-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'PublicSans-Medium';
   font-style: normal;
-  src: local('PublicSans-Medium'), url(./fonts/PublicSans-Medium.ttf) format('truetype');
+  src: local('PublicSans-Medium'), url(/fonts/PublicSans-Medium.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'PublicSans-Bold';
   font-style: normal;
-  src: local('PublicSans-Bold'), url(./fonts/PublicSans-Bold.ttf) format('truetype');
+  src: local('PublicSans-Bold'), url(/fonts/PublicSans-Bold.ttf) format('truetype');
 }
 
 
@@ -163,7 +163,7 @@ a {
   position: absolute;
   right: 0;
   top: 0;
-  background-image: url(./background-img.png);
+  background-image: url(/background-img.png);
   z-index: 0;
 }
 
