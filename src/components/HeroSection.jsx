@@ -1,5 +1,5 @@
 import { ButtonCTA } from './ButtonCTA'
-import { ServiceCard } from './serviceCard'
+import { ServiceCard } from './ServiceCard'
 import img from '../assets/hero-section-img.png'
 import iconOnline from '../assets/icon-online.png'
 import iconBudgeting from '../assets/icon-budgeting.png'
