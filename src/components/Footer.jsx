@@ -11,9 +11,11 @@ export const Footer = () => {
     <footer>
       <div className='links-container'>
         <div className='links-networks'>
-          <picture>
-            <img src={logoLight} />
-          </picture>
+          <a href='#'>
+            <picture>
+              <img src={logoLight} />
+            </picture>
+          </a>
           <div className="icons">
             <a href='#'><FacebookIcon /></a>
             <a href='#'><YoutubeIcon /></a>

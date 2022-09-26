@@ -34,3 +34,32 @@ export const createNewArticle = ({ author, title, content }) => {
     return res
   })
 }
+
+export const deleteArticle = (id) => {
+  return fetch(API_BASE_URL + '/articles/' + id, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'DELETE'
+  }).then(res => res.json()).then(res => {
+    return res
+  })
+}
+
+export const editArticle = (id, { author, title, content }) => {
+  return fetch(API_BASE_URL + '/articles/' + id, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'PATCH',
+    body: JSON.stringify({
+      author,
+      title,
+      content
+    })
+  }).then(res => res.json()).then(res => {
+    return res
+  })
+}

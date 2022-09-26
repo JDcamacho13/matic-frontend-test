@@ -4,9 +4,11 @@ import { ButtonCTA } from './ButtonCTA'
 export const Header = () => {
   return (
     <header className='header'>
-      <picture>
-        <img src={logo} alt="logo" />
-      </picture>
+      <a href='#'>
+        <picture>
+          <img src={logo} alt="logo" />
+        </picture>
+      </a>
       <nav>
         <ul>
           <a href='#'><li>Home</li></a>
